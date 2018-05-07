@@ -62,14 +62,28 @@ function listUsers() {
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="./css/styles.css" type="text/css" />
-        <!--Prediction dependencies-->
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
         <!--Converting from php array to usabel javascript array-->
         <script>
               jArray= <?php echo json_encode($availableItems); ?>;
         </script>
+        <!--Prediction dependencies-->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <!--Full Calendar Dependencies-->
+        <link rel='stylesheet' href='fullcalendar-3.9.0/fullcalendar.css' />
+        
+        <script src='fullcalendar-3.9.0/lib/moment.min.js'></script>
+        <script src='fullcalendar-3.9.0/fullcalendar.js'></script>
+
+     
+
+  
+  
+
+
+
     </head>
     
     <body>
@@ -105,6 +119,29 @@ function listUsers() {
       <form action="logout.php">
         <input type="submit" value="Logout" />
       </form>
+     </div>
+     <div id = "calendar">
+         <script>
+             $('#calendar').fullCalendar({
+                 defaultView: 'month',
+              events: [
+                {
+                  title  : 'event1',
+                  start  : '2010-01-01'
+                },
+                {
+                  title  : 'event2',
+                  start  : '2010-01-05',
+                  end    : '2010-01-07'
+                },
+                {
+                  title  : 'event3',
+                  start  : '2010-01-09T12:30:00',
+                  allDay : false // will make the time show
+                }
+              ]
+            });
+         </script>
      </div>
    </section>
 
